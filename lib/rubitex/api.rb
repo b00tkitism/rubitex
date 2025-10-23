@@ -22,8 +22,9 @@ module Rubitex
       end
     end
 
+    # @return [Rubitex::Types::ProfileResponse]
     def profile
-      get("users/profile", authenticate: true)
+      Rubitex::Builders.profile_response(get("users/profile", authenticate: true))
     end
 
     def balance(currency: "rls")
